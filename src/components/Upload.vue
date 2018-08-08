@@ -35,13 +35,13 @@ export default {
       })
 
       let storage = this.$firebase.storage().ref()
-      let fileRef = storage.child(`files/${window.uid}/${file.name}`)
+      let fileRef = storage.child(`files/${file.name}`)
 
       fileRef.put(file)
         .then(snapshot => {
           snapshot.ref.getDownloadURL()
             .then(url => {
-              let database = this.$firebase.database().ref(`files/${window.uid}`)
+              let database = this.$firebase.database().ref(`files/`)
               database.push({ url, name: file.name })
               this.$emit('fileOk', file)
               this.$root.$emit('toast::show', {
