@@ -7,9 +7,7 @@
 
     <div class="collapse navbar-collapse" v-if="isLogged">
       <div class="navbar-nav ml-auto">
-        <button class="btn btn-outline-light mr-3">
-          <i class="fas fa-plus"></i>
-        </button>
+        <upload/>
         <button class="btn btn btn-outline-danger" @click="logout()"
         >
           <i class="fas fa-power-off"></i>
@@ -20,7 +18,12 @@
 </template>
 
 <script>
+import Upload from './Upload'
+
 export default {
+  components: {
+    Upload
+  },
   props: {
     isLogged: {
       type: Boolean,
