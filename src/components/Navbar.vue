@@ -5,7 +5,7 @@
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <div class="collapse navbar-collapse" id="navbarSupportedContent" v-if="isLogged">
       <div class="navbar-nav ml-auto">
         <button class="btn btn-outline-light mr-3" type="button">
           <i class="fas fa-plus"></i>
@@ -20,6 +20,11 @@
 
 <script>
 export default {
-
+  props: {
+    isLogged: {
+      type: Boolean,
+      required: true
+    }
+  }
 }
 </script>
