@@ -53,6 +53,7 @@ export default {
   },
   methods: {
     submit () {
+      this.show = false
       this.loading = true
       this.$firebase.auth().signInWithEmailAndPassword(this.email, this.password)
         .then(data => {
