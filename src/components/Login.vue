@@ -1,7 +1,7 @@
 <template>
   <div id="login">
     <form class="form-login" @submit.prevent="submit()">
-      <h1 class="h3 mb-3 font-weight-normal">Login</h1>
+      <h1 class="h3 mb-3 font-weight-normal">Welcome!</h1>
       <input
         required
         autofocus
