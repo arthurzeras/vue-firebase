@@ -3,16 +3,19 @@
     <toast/>
     <navbar :is-logged="!!user"/>
     <login v-if="!user" @logged="user = $event"/>
+    <list v-else/>
   </div>
 </template>
 
 <script>
+import List from './components/List'
 import Toast from './components/Toast'
 import Login from './components/Login'
 import Navbar from './components/Navbar'
 
 export default {
   components: {
+    List,
     Toast,
     Login,
     Navbar
