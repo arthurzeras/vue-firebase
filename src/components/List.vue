@@ -31,7 +31,6 @@ export default {
   methods: {
     getFiles () {
       this.loading = true
-      const uid = window.uid
       const database = this.$firebase.database().ref(`files`)
       database.on('value', snapshot => {
         let data = snapshot.val()
@@ -54,7 +53,7 @@ export default {
       })
     },
     async deleteFile (file) {
-      // We will not really delete, but update, inserting a property called 'deleted' 
+      // We will not really delete, but update, inserting a property called 'deleted'
       try {
         if (confirm('Do you really want to delete?')) {
           const dbRef = this.$firebase.database().ref(`files/${file.id}`)
