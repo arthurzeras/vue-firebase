@@ -4,7 +4,7 @@
     <navbar :is-logged="!!user"/>
     <login v-if="!user" @logged="user = $event"/>
     <list v-else/>
-    <p>test</p>
+    <p>test2</p>
   </div>
 </template>
 
